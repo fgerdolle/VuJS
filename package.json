@@ -1,0 +1,25 @@
+{
+  "name": "vujs",
+  "version": "1.0.0",
+  "description": "VuJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fgerdolle/VuJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fgerdolle/VuJS/issues"
+  },
+  "homepage": "https://github.com/fgerdolle/VuJS#readme",
+  "dependencies": {
+    "vue": "^2.6.11",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
