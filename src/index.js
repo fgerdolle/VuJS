@@ -17,7 +17,9 @@ let vueInstance = new Vue({
             {id: 2, label: 'Pistolet'},
             {id: 3, label: 'Fusil à levier'},
             {id: 4, label: 'Armure Samurai'},
-        ]
+        ],
+        itemToAdd: '',
+        maxItemId: 4
     },
     created: function(){
         console.log("instance created");
@@ -50,7 +52,17 @@ let vueInstance = new Vue({
             console.log(this.randomNumber);
 
             return this.randomNumber % 2;
+        },
+        addItem: function() {
+
+            this.maxItemId++;
+
+            console.log(this.maxItemId);
+            
+            this.items.push({id : this.maxItemId, label : this.itemToAdd});
+
+            this.itemToAdd = '';
         }
-    },
+    }
     
 });

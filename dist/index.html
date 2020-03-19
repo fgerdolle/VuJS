@@ -5,7 +5,7 @@
     </head>
     <body>
         <div id="app">
-            <template v-if="displayContent()">
+            <!--<template v-if="displayContent()" je met cette balise en commentaire sinon cela fait un conflit avec le formulaire-->
                 <p>{{ message }} <span v-html="rawHtmlMessage"></span></p>
                 <p v-text="textMessage"></p>
                 <img v-bind:src="imageSrc">
@@ -14,11 +14,13 @@
                 <p>Deburred : {{ deburredMessage }}</p>
                 <button v-on:click="increment">Click me</button>
                 <p>Vous avez cliqué {{ counter }} fois.</p>
-                <ul>
-                    <li v-for="item in items">{{ item.label }}</li>
-                </ul>
-            </template>
+            <!--</template>-->
             <p v-else>{{ noContentMessage }}</p>
+            <input v-model="itemToAdd" placeholder="Add item" v-on:keyup.enter="addItem" entrer><span><button v-on:click="addItem">Add item</button></span>
+            
+            <ul>
+                <li v-for="item in items">{{ item.label }}</li>
+            </ul>
         </div>        
         <script src="bundle.js"></script>
     </body>
