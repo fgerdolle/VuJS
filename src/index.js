@@ -1,5 +1,11 @@
 import Vue from 'vue';
 import _ from 'lodash';
+import counter from './counter';
+import shoppingList from './shoppingList';
+
+Vue.component('counter', counter);
+Vue.component('shopping-list', shoppingList);
+
 
 let vueInstance = new Vue({
     el: '#app',
@@ -52,16 +58,6 @@ let vueInstance = new Vue({
             console.log(this.randomNumber);
 
             return this.randomNumber % 2;
-        },
-        addItem: function() {
-
-            this.maxItemId++;
-
-            console.log(this.maxItemId);
-            
-            this.items.push({id : this.maxItemId, label : this.itemToAdd});
-
-            this.itemToAdd = '';
         }
     }
     
