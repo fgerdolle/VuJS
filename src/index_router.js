@@ -10,7 +10,7 @@ Vue.use(VueRouter)
 
 let routes = [
     { path: '/counter', component: counter },
-    { path: '/shopping', component: shopping }
+    {  path: '/shopping/:title', component: shopping, props: true }
 ];
 
 let router = new VueRouter({
