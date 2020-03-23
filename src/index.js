@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import _ from 'lodash';
 import counter from './counter';
-import shoppingList from './shoppingList';
+import shoppingList from './shopping';
 
 Vue.component('counter', counter);
-Vue.component('shopping-list', shoppingList);
+Vue.component('shopping-list', shopping);
 
 
 let vueInstance = new Vue({
