@@ -1,21 +1,32 @@
 export default {
     data: function() { 
         return {
-            items : [],
             itemToAdd : ''
         };
     },
-    props: ['title'],
+    props: ['type'],
+    computed: {
+        items: function() {
+            if (this.type == 'epicerie') {
+            
+                return this.$store.state.epicerieItems;
+            }
+            else if (this.type == 'bricolage') {
+
+                return this.$store.state.bricolageItems;
+            }
+        }
+    },
     methods: {
         addItem: function() {
             
-            this.items.push({label : this.itemToAdd});
+            this.$store.commit('addItem', { itemToAdd: this.itemToAdd, type: this.type });
 
             this.itemToAdd = '';
         }
     },
     template: `<div>
-                    <h2>Shopping List {{ title }}</h2>
+                    <h2>Shopping List</h2>
                     <input v-model="itemToAdd" placeholder="Add item"><span><button v-on:click="addItem">Add item</button></span>
                     
                     <ul>
@@ -27,10 +38,5 @@ export default {
     },
     mounted: function() {
         console.log('Shopping instance mounted');
-    },
-    watch: {
-        title: function(to, from) {
-            this.items = [];
-        }
     }
 }
